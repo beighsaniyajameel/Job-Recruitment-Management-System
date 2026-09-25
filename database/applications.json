@@ -1,0 +1,150 @@
+[{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf154f"
+  },
+  "applicationId": "APP001",
+  "jobId": "JOB001",
+  "applicantEmail": "aisha@example.com",
+  "applicationDate": "2026-09-01",
+  "status": "Shortlisted"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1550"
+  },
+  "applicationId": "APP002",
+  "jobId": "JOB001",
+  "applicantEmail": "aarav@example.com",
+  "applicationDate": "2026-09-02",
+  "status": "Applied"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1551"
+  },
+  "applicationId": "APP003",
+  "jobId": "JOB002",
+  "applicantEmail": "rohan@example.com",
+  "applicationDate": "2026-09-03",
+  "status": "Interview"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1552"
+  },
+  "applicationId": "APP004",
+  "jobId": "JOB003",
+  "applicantEmail": "meera@example.com",
+  "applicationDate": "2026-09-03",
+  "status": "Selected"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1553"
+  },
+  "applicationId": "APP005",
+  "jobId": "JOB005",
+  "applicantEmail": "ishita@example.com",
+  "applicationDate": "2026-09-04",
+  "status": "Shortlisted"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1554"
+  },
+  "applicationId": "APP006",
+  "jobId": "JOB005",
+  "applicantEmail": "aisha@example.com",
+  "applicationDate": "2026-09-04",
+  "status": "Applied"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1555"
+  },
+  "applicationId": "APP007",
+  "jobId": "JOB006",
+  "applicantEmail": "ananya@example.com",
+  "applicationDate": "2026-09-05",
+  "status": "Interview"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1556"
+  },
+  "applicationId": "APP008",
+  "jobId": "JOB007",
+  "applicantEmail": "vihaan@example.com",
+  "applicationDate": "2026-09-05",
+  "status": "Shortlisted"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1557"
+  },
+  "applicationId": "APP009",
+  "jobId": "JOB009",
+  "applicantEmail": "aarav@example.com",
+  "applicationDate": "2026-09-06",
+  "status": "Rejected"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1558"
+  },
+  "applicationId": "APP010",
+  "jobId": "JOB009",
+  "applicantEmail": "kabir@example.com",
+  "applicationDate": "2026-09-06",
+  "status": "Applied"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf1559"
+  },
+  "applicationId": "APP011",
+  "jobId": "JOB010",
+  "applicantEmail": "meera@example.com",
+  "applicationDate": "2026-09-07",
+  "status": "Interview"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf155a"
+  },
+  "applicationId": "APP012",
+  "jobId": "JOB011",
+  "applicantEmail": "aisha@example.com",
+  "applicationDate": "2026-09-07",
+  "status": "Applied"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf155b"
+  },
+  "applicationId": "APP013",
+  "jobId": "JOB011",
+  "applicantEmail": "ishita@example.com",
+  "applicationDate": "2026-09-08",
+  "status": "Selected"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf155c"
+  },
+  "applicationId": "APP014",
+  "jobId": "JOB012",
+  "applicantEmail": "vihaan@example.com",
+  "applicationDate": "2026-09-08",
+  "status": "Shortlisted"
+},
+{
+  "_id": {
+    "$oid": "6ab511a747d2f8ff36bf155d"
+  },
+  "applicationId": "APP015",
+  "jobId": "JOB004",
+  "applicantEmail": "aarav@example.com",
+  "applicationDate": "2026-09-09",
+  "status": "Interview"
+}]

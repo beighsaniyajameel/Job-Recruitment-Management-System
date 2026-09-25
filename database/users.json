@@ -1,0 +1,143 @@
+[{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf152d"
+  },
+  "name": "Aisha Khan",
+  "email": "aisha@example.com",
+  "role": "job_seeker",
+  "skills": [
+    "Python",
+    "MongoDB",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf152e"
+  },
+  "name": "Aarav Sharma",
+  "email": "aarav@example.com",
+  "role": "job_seeker",
+  "skills": [
+    "Java",
+    "Spring Boot",
+    "SQL"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf152f"
+  },
+  "name": "Meera Nair",
+  "email": "meera@example.com",
+  "role": "job_seeker",
+  "skills": [
+    "Python",
+    "Machine Learning",
+    "Pandas"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1530"
+  },
+  "name": "Rohan Gupta",
+  "email": "rohan@example.com",
+  "role": "job_seeker",
+  "skills": [
+    "JavaScript",
+    "React",
+    "Node.js"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1531"
+  },
+  "name": "Ishita Kapoor",
+  "email": "ishita@example.com",
+  "role": "job_seeker",
+  "skills": [
+    "Python",
+    "Django",
+    "MongoDB"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1532"
+  },
+  "name": "Kabir Singh",
+  "email": "kabir@example.com",
+  "role": "job_seeker",
+  "skills": [
+    "C++",
+    "Data Structures",
+    "Algorithms"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1533"
+  },
+  "name": "Ananya Rao",
+  "email": "ananya@example.com",
+  "role": "job_seeker",
+  "skills": [
+    "UI/UX",
+    "Figma",
+    "HTML",
+    "CSS"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1534"
+  },
+  "name": "Vihaan Mehta",
+  "email": "vihaan@example.com",
+  "role": "job_seeker",
+  "skills": [
+    "AWS",
+    "Linux",
+    "Docker"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1535"
+  },
+  "name": "Rahul Sharma",
+  "email": "rahul@techcorp.example",
+  "role": "recruiter",
+  "company": "TechCorp"
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1536"
+  },
+  "name": "Priya Menon",
+  "email": "priya@innovatelabs.example",
+  "role": "recruiter",
+  "company": "Innovate Labs"
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1537"
+  },
+  "name": "Arjun Verma",
+  "email": "arjun@cloudnest.example",
+  "role": "recruiter",
+  "company": "CloudNest"
+},
+{
+  "_id": {
+    "$oid": "6ab5107447d2f8ff36bf1538"
+  },
+  "name": "Neha Iyer",
+  "email": "neha@finbyte.example",
+  "role": "recruiter",
+  "company": "FinByte"
+}]

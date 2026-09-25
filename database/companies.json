@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "6ab5111547d2f8ff36bf153a"
+  },
+  "companyName": "TechCorp",
+  "location": "Bangalore",
+  "industry": "Information Technology",
+  "description": "A technology company providing software and IT solutions."
+},
+{
+  "_id": {
+    "$oid": "6ab5111547d2f8ff36bf153b"
+  },
+  "companyName": "Innovate Labs",
+  "location": "Hyderabad",
+  "industry": "Software Development",
+  "description": "A software company focused on digital products and engineering solutions."
+},
+{
+  "_id": {
+    "$oid": "6ab5111547d2f8ff36bf153c"
+  },
+  "companyName": "CloudNest",
+  "location": "Pune",
+  "industry": "Cloud Computing",
+  "description": "A cloud technology company working on infrastructure and cloud services."
+},
+{
+  "_id": {
+    "$oid": "6ab5111547d2f8ff36bf153d"
+  },
+  "companyName": "FinByte",
+  "location": "Mumbai",
+  "industry": "FinTech",
+  "description": "A financial technology company building digital finance solutions."
+},
+{
+  "_id": {
+    "$oid": "6ab5111547d2f8ff36bf153e"
+  },
+  "companyName": "DataVista",
+  "location": "Chennai",
+  "industry": "Data Analytics",
+  "description": "A data analytics company providing business intelligence and machine learning solutions."
+}]
