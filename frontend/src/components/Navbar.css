@@ -1,0 +1,195 @@
+/* =========================================================
+   CAREERCONNECT NAVBAR
+   ========================================================= */
+
+.navbar {
+  width: 100%;
+  height: 76px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+  width: min(92%, var(--container-width));
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- Logo ---------- */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+  color: white;
+
+  border-radius: var(--radius-md);
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--primary);
+}
+
+.logo-text span {
+  color: var(--accent);
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-left: auto;
+  margin-right: 42px;
+}
+
+.navbar-links a {
+  position: relative;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--primary);
+}
+
+.navbar-links a::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--accent);
+
+  transition: width 0.2s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* ---------- Actions ---------- */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.login-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.login-link:hover {
+  color: var(--accent);
+}
+
+.register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 0 20px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.register-button:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+/* ---------- Mobile ---------- */
+
+.mobile-menu-button {
+  display: none;
+
+  border: none;
+  background: transparent;
+  color: var(--primary);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 850px) {
+
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-links.active {
+    display: flex;
+
+    position: absolute;
+    top: 76px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 24px;
+
+    flex-direction: column;
+    gap: 22px;
+
+    background: white;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+
+    margin: 0;
+  }
+
+  .navbar-links.active a::after {
+    display: none;
+  }
+}

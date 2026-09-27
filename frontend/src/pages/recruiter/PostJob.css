@@ -1,0 +1,359 @@
+.post-job-page {
+  min-height: calc(100vh - 76px);
+  padding: 45px 0 80px;
+  background: var(--background);
+}
+
+.post-job-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.post-job-back:hover {
+  color: var(--accent);
+}
+
+.post-job-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 25px;
+  align-items: start;
+}
+
+.post-job-card,
+.posting-tips-card,
+.posting-info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.post-job-card {
+  padding: 38px;
+}
+
+.post-job-header {
+  padding-bottom: 27px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.post-job-label,
+.published-label {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  margin-bottom: 9px;
+}
+
+.post-job-header h1 {
+  font-size: 30px;
+  margin-bottom: 7px;
+}
+
+.post-job-header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.post-job-error {
+  padding: 12px 15px;
+  margin-bottom: 23px;
+  border-radius: var(--radius-md);
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.post-form-section {
+  margin-bottom: 32px;
+}
+
+.post-form-section h3 {
+  font-size: 18px;
+  margin-bottom: 19px;
+}
+
+.post-form-group {
+  margin-bottom: 19px;
+}
+
+.post-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.post-form-group label span {
+  color: var(--danger);
+}
+
+.post-form-group input,
+.post-form-group select,
+.post-form-group textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.post-form-group input,
+.post-form-group select {
+  height: 47px;
+  padding: 0 13px;
+}
+
+.post-form-group textarea {
+  padding: 13px;
+  resize: vertical;
+  min-height: 175px;
+}
+
+.post-form-group input:focus,
+.post-form-group select:focus,
+.post-form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.post-input-wrapper {
+  height: 47px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+}
+
+.post-input-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.post-input-wrapper input {
+  height: 100%;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.post-input-wrapper input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.post-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.post-form-group small {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.post-textarea-wrapper {
+  position: relative;
+}
+
+.post-textarea-wrapper svg {
+  position: absolute;
+  top: 15px;
+  left: 13px;
+  color: var(--text-muted);
+}
+
+.post-textarea-wrapper textarea {
+  padding-left: 39px;
+}
+
+.publish-job-button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.publish-job-button:hover {
+  background: var(--accent-hover);
+}
+
+/* Sidebar */
+
+.post-job-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.posting-tips-card,
+.posting-info-card {
+  padding: 25px;
+}
+
+.posting-tips-card h3,
+.posting-info-card h3 {
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.posting-tips-card ul {
+  padding-left: 18px;
+}
+
+.posting-tips-card li {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.posting-tips-card li:last-child {
+  margin-bottom: 0;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: var(--accent);
+}
+
+.posting-info-card p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Success */
+
+.job-published-card {
+  max-width: 650px;
+  margin: 70px auto;
+  padding: 55px 45px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.published-icon {
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f0fdf4;
+  color: var(--success);
+}
+
+.job-published-card h1 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.job-published-card p {
+  max-width: 500px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.published-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.published-primary,
+.published-secondary {
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.published-primary {
+  border: none;
+  background: var(--accent);
+  color: white;
+}
+
+.published-secondary {
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text-primary);
+}
+
+@media (max-width: 850px) {
+  .post-job-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .post-job-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-job-page {
+    padding: 30px 0 60px;
+  }
+
+  .post-job-card {
+    padding: 25px 20px;
+  }
+
+  .post-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .job-published-card {
+    margin: 40px auto;
+    padding: 40px 22px;
+  }
+
+  .published-actions {
+    flex-direction: column;
+  }
+
+  .published-primary,
+  .published-secondary {
+    width: 100%;
+  }
+}

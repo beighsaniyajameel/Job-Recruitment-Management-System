@@ -61,20 +61,23 @@ const jobSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Auto-generate a jobId like JOB013 if one wasn't supplied
+// Auto-generate a unique jobId
 jobSchema.pre('validate', async function generateJobId(next) {
   if (this.jobId) return next();
+
   try {
     const Job = this.constructor;
-    const lastJob = await Job.findOne().sort({ createdAt: -1 });
-    let nextNumber = 1;
-    if (lastJob && lastJob.jobId && /^JOB(\d+)$/.test(lastJob.jobId)) {
-      nextNumber = parseInt(lastJob.jobId.replace('JOB', ''), 10) + 1;
-    } else {
-      const count = await Job.countDocuments();
-      nextNumber = count + 1;
+
+    let nextNumber = await Job.countDocuments() + 1;
+    let newJobId = `JOB${String(nextNumber).padStart(3, '0')}`;
+
+    while (await Job.exists({ jobId: newJobId })) {
+      nextNumber += 1;
+      newJobId = `JOB${String(nextNumber).padStart(3, '0')}`;
     }
-    this.jobId = `JOB${String(nextNumber).padStart(3, '0')}`;
+
+    this.jobId = newJobId;
+
     next();
   } catch (err) {
     next(err);
