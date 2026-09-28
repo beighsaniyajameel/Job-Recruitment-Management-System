@@ -1,16 +1,40 @@
-# React + Vite
+# CareerConnect – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CareerConnect is the frontend of our **Job Recruitment Management System using NoSQL**.
 
-Currently, two official plugins are available:
+It provides a professional web interface for job seekers and recruiters to manage the recruitment process.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- User registration and login
+- Browse and search jobs
+- Job type, location and experience filters
+- View job details
+- Apply for jobs
+- Track applications
+- Job seeker dashboard
+- Recruiter dashboard
+- Post, edit and delete jobs
+- View applications
+- Update application status
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React.js
+- Vite
+- JavaScript
+- React Router
+- Axios
+- CSS
+- Lucide React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```text
+src/
+├── components/     # Reusable UI components
+├── pages/          # Application pages
+├── services/       # API configuration
+├── styles/         # Global styling
+├── App.jsx         # Application routes
+└── main.jsx        # Application entry point
