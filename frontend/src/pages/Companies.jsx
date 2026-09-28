@@ -1,52 +1,30 @@
-import { Building2, MapPin, Users } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Building2, MapPin } from 'lucide-react'
+import api from '../services/api'
 import './Companies.css'
 
-const companies = [
-  {
-    name: 'TechNova Solutions',
-    location: 'Bengaluru',
-    industry: 'Technology',
-    jobs: 24,
-    employees: '500+',
-  },
-  {
-    name: 'DataWorks',
-    location: 'Hyderabad',
-    industry: 'Data & Analytics',
-    jobs: 18,
-    employees: '250+',
-  },
-  {
-    name: 'PixelCraft',
-    location: 'Bengaluru',
-    industry: 'Software Development',
-    jobs: 12,
-    employees: '150+',
-  },
-  {
-    name: 'CloudCore Technologies',
-    location: 'Chennai',
-    industry: 'Cloud & DevOps',
-    jobs: 16,
-    employees: '300+',
-  },
-  {
-    name: 'SecureNet',
-    location: 'Pune',
-    industry: 'Cybersecurity',
-    jobs: 9,
-    employees: '100+',
-  },
-  {
-    name: 'CodeSphere',
-    location: 'Mumbai',
-    industry: 'Technology',
-    jobs: 15,
-    employees: '200+',
-  },
-]
-
 function Companies() {
+  const [companies, setCompanies] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    const fetchCompanies = async () => {
+      try {
+        const response = await api.get('/companies')
+
+        setCompanies(response.data.companies || [])
+      } catch (err) {
+        console.error('Failed to fetch companies:', err)
+        setError('Unable to load companies from the server.')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchCompanies()
+  }, [])
+
   return (
     <main className="companies-page">
 
@@ -77,61 +55,80 @@ function Companies() {
             </span>
           </div>
 
-          <div className="companies-grid">
+          {loading && (
+            <div className="empty-jobs">
+              <h2>Loading companies...</h2>
+            </div>
+          )}
 
-            {companies.map((company) => (
-              <article
-                className="company-card"
-                key={company.name}
-              >
+          {error && (
+            <div className="empty-jobs">
+              <h2>Unable to load companies</h2>
+              <p>{error}</p>
+            </div>
+          )}
 
-                <div className="company-card-top">
+          {!loading && !error && companies.length === 0 && (
+            <div className="empty-jobs">
+              <h2>No companies found</h2>
+              <p>
+                There are currently no companies available.
+              </p>
+            </div>
+          )}
 
-                  <div className="company-icon">
-                    {company.name.charAt(0)}
+          {!loading && !error && companies.length > 0 && (
+            <div className="companies-grid">
+
+              {companies.map((company) => (
+                <article
+                  className="company-card"
+                  key={company._id}
+                >
+
+                  <div className="company-card-top">
+
+                    <div className="company-icon">
+                      {company.companyName?.charAt(0)}
+                    </div>
+
+                    <div>
+                      <h3>{company.companyName}</h3>
+
+                      <span className="company-industry">
+                        {company.industry || 'Technology'}
+                      </span>
+                    </div>
+
                   </div>
 
-                  <div>
-                    <h3>{company.name}</h3>
+                  <div className="company-details">
 
-                    <span className="company-industry">
-                      {company.industry}
+                    <div>
+                      <MapPin size={16} />
+                      <span>{company.location}</span>
+                    </div>
+
+                  </div>
+
+                  <div className="company-footer">
+
+                    <span>
+                      <Building2 size={16} />
+                      Company
                     </span>
+
+                    <button>
+                      View Company
+                    </button>
+
                   </div>
 
-                </div>
+                </article>
+              ))}
 
-                <div className="company-details">
-
-                  <div>
-                    <MapPin size={16} />
-                    <span>{company.location}</span>
-                  </div>
-
-                  <div>
-                    <Users size={16} />
-                    <span>{company.employees} Employees</span>
-                  </div>
-
-                </div>
-
-                <div className="company-footer">
-
-                  <span>
-                    <Building2 size={16} />
-                    {company.jobs} Open Jobs
-                  </span>
-
-                  <button>
-                    View Company
-                  </button>
-
-                </div>
-
-              </article>
-            ))}
-
-          </div>
+            </div>
+          )}
 
         </div>
       </section>

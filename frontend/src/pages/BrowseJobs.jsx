@@ -98,7 +98,7 @@ function BrowseJobs() {
   useEffect(() => {
   const fetchJobs = async () => {
     try {
-      const response = await api.get('/jobs')
+      const response = await api.get('/jobs?limit=100')
 
       const formattedJobs = (response.data.jobs || []).map((job) => ({
         id: job._id,
