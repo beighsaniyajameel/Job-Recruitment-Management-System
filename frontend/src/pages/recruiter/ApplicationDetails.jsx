@@ -57,18 +57,6 @@ useEffect(() => {
         jobTitle: job?.jobTitle || foundApplication.jobId,
 })
 
-      console.log(
-        'Application Details:',
-        foundApplication
-      )
-
-      setApplication(foundApplication)
-    } catch (err) {
-      console.error(
-        'Failed to fetch application:',
-        err
-      )
-
       setError(
         err.response?.data?.message ||
         'Unable to load application.'
@@ -149,7 +137,7 @@ if (error || !application) {
     className="application-status-select"
     value={application.status}
     onChange={async (e) => {
-  const newStatus = e.target.value
+      const newStatus = e.target.value
 
   try {
     const response = await api.put(
@@ -159,7 +147,10 @@ if (error || !application) {
       }
     )
 
-    setApplication(response.data.application)
+    setApplication((prev) => ({
+      ...response.data.application,
+      jobTitle: prev.jobTitle,
+    }))
   } catch (err) {
     console.error(
       'Failed to update application status:',
@@ -195,7 +186,7 @@ if (error || !application) {
 
               <div>
                 <span>Phone</span>
-                <strong>{application.applicantPhone}</strong>
+                <strong>{application.applicantPhone || 'Not Provided'}</strong>
               </div>
             </div>
 
@@ -204,7 +195,7 @@ if (error || !application) {
 
               <div>
                 <span>Applied For</span>
-                <strong>{application.jobTitle}</strong>
+                <strong>{application.jobTitle || application.jobId || 'Not Provided'}</strong>
               </div>
             </div>
 
@@ -230,7 +221,7 @@ if (error || !application) {
               <FileText size={20} />
 
               <span>
-                {application.resumeName}
+                {application.resumeName || 'Resume.pdf'}
               </span>
             </div>
 

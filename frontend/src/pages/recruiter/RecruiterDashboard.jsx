@@ -17,6 +17,7 @@ function RecruiterDashboard() {
 
     const [applications, setApplications] = useState([])
     const [recruiterJobs, setRecruiterJobs] = useState([])
+    const [applicantCounts, setApplicantCounts] = useState({})
     const [dashboardStats, setDashboardStats] = useState({
       totalJobs: 0,
       totalApplications: 0,
@@ -50,6 +51,13 @@ useEffect(() => {
       const allApplications = applicationResponses.flatMap(
         (response) => response.data.applications || []
 )
+      const counts = {}
+        allApplications.forEach((application) => {
+          counts[application.jobId] =
+            (counts[application.jobId] || 0) + 1
+        })
+
+        setApplicantCounts(counts)
 
       setApplications(allApplications)
 
@@ -79,7 +87,7 @@ useEffect(() => {
 }, [])
 
 
-const handleDeleteJob = (jobId) => {
+const handleDeleteJob = async (jobId) => {
   const confirmed = window.confirm(
     'Are you sure you want to delete this job?'
   )
@@ -88,16 +96,22 @@ const handleDeleteJob = (jobId) => {
     return
   }
 
-  const updatedJobs = recruiterJobs.filter(
-    (job) => String(job.id) !== String(jobId)
-  )
+  try {
+    await api.delete(`/jobs/${jobId}`)
 
-  localStorage.setItem(
-    'recruiterJobs',
-    JSON.stringify(updatedJobs)
-  )
+    setRecruiterJobs((currentJobs) =>
+      currentJobs.filter(
+        (job) => String(job._id) !== String(jobId)
+      )
+    )
+  } catch (err) {
+    console.error('Failed to delete job:', err)
 
-  setRecruiterJobs(updatedJobs)
+    alert(
+      err.response?.data?.message ||
+      'Unable to delete the job.'
+    )
+  }
 }
 
   return (
@@ -248,7 +262,7 @@ const handleDeleteJob = (jobId) => {
 
                 <div className="recruiter-job-applicants">
 
-                  <strong>-</strong>
+                  <strong>{applicantCounts[job.jobId] || 0}</strong>
 
                   <span>Applicants</span>
 
@@ -285,7 +299,7 @@ const handleDeleteJob = (jobId) => {
       <button
         onClick={() => {
           setOpenMenu(null)
-          handleDeleteJob(job.id)
+          handleDeleteJob(job._id)
         }}
       >
         Delete Job

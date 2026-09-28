@@ -311,7 +311,7 @@ function BrowseJobs() {
 
               <h3>Experience</h3>
 
-              {['Fresher', '1–3 years', '3–5 years'].map(
+              {['Fresher', '0-2 years', '1-2 years', '1-3 years'].map(
                 (level) => (
                   <label className="checkbox-label" key={level}>
                     <input
