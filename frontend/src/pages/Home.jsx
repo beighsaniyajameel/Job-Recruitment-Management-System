@@ -38,6 +38,43 @@ function Home() {
     fetchHomeData()
   }, [])
 
+  /*
+    Current MongoDB data:
+    - 12 Jobs
+    - 5 Companies
+    - 8 Job Seekers
+    - 4 Recruiters
+    - 15 Applications
+  */
+
+  // Calculate category counts from the jobs received from MongoDB
+  const softwareJobs = jobs.filter((job) =>
+    [
+      'Software Developer',
+      'Frontend Developer',
+      'Backend Developer',
+      'Python Developer',
+      'Java Developer',
+    ].includes(job.jobTitle)
+  ).length
+
+  const dataJobs = jobs.filter((job) =>
+    [
+      'Data Analyst',
+      'Data Scientist',
+      'Machine Learning Intern',
+      'Data Engineer',
+    ].includes(job.jobTitle)
+  ).length
+
+  const cloudJobs = jobs.filter((job) =>
+    ['Cloud Engineer', 'DevOps Engineer'].includes(job.jobTitle)
+  ).length
+
+  const designJobs = jobs.filter((job) =>
+    ['UI/UX Designer'].includes(job.jobTitle)
+  ).length
+
   return (
     <main>
 
@@ -68,7 +105,6 @@ function Home() {
               looking for talented people like you.
             </p>
 
-
             {/* ================= SEARCH BOX ================= */}
 
             <div className="job-search">
@@ -88,9 +124,7 @@ function Home() {
 
               </div>
 
-
               <div className="search-divider"></div>
-
 
               <div className="search-field">
 
@@ -107,7 +141,6 @@ function Home() {
 
               </div>
 
-
               <button
                 className="search-button"
                 onClick={() => {
@@ -120,13 +153,12 @@ function Home() {
 
             </div>
 
-
             {/* ================= POPULAR SEARCHES ================= */}
 
             <p className="popular-searches">
               Popular:
 
-              <span>Software Engineer</span>
+              <span>Software Developer</span>
 
               <span>Data Analyst</span>
 
@@ -154,7 +186,7 @@ function Home() {
                   <p>
                     {loading
                       ? 'Loading opportunities...'
-                      : 'Latest opportunities'}
+                      : `${totalJobs} jobs available`}
                   </p>
                 </div>
 
@@ -238,8 +270,8 @@ function Home() {
               </div>
 
               <div>
-                <strong>92%</strong>
-                <span>Successful matches</span>
+                <strong>{totalJobs}</strong>
+                <span>Jobs available</span>
               </div>
 
             </div>
@@ -315,7 +347,7 @@ function Home() {
             <div>
 
               <strong>
-                50,000+
+                8
               </strong>
 
               <span>
@@ -327,7 +359,7 @@ function Home() {
           </div>
 
 
-          {/* SUCCESS RATE */}
+          {/* APPLICATIONS */}
 
           <div className="stat-item">
 
@@ -338,16 +370,17 @@ function Home() {
             <div>
 
               <strong>
-                92%
+                15
               </strong>
 
               <span>
-                Success Rate
+                Applications
               </span>
 
             </div>
 
           </div>
+
 
         </div>
 
@@ -403,7 +436,7 @@ function Home() {
               </h3>
 
               <p>
-                1,240 jobs
+                {loading ? '...' : softwareJobs} jobs
               </p>
 
             </div>
@@ -422,7 +455,7 @@ function Home() {
               </h3>
 
               <p>
-                860 jobs
+                {loading ? '...' : dataJobs} jobs
               </p>
 
             </div>
@@ -441,7 +474,7 @@ function Home() {
               </h3>
 
               <p>
-                640 jobs
+                {loading ? '...' : cloudJobs} jobs
               </p>
 
             </div>
@@ -460,10 +493,11 @@ function Home() {
               </h3>
 
               <p>
-                420 jobs
+                {loading ? '...' : designJobs} jobs
               </p>
 
             </div>
+
 
           </div>
 
